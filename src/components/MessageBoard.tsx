@@ -9,7 +9,7 @@ type Props = {
 const Messages : React.FC<Props> = ({index}) => {
 
   const [messageArray, setMessageArr] = useState<Array<string>>([])
-  const bottomRef = useRef<HTMLDivElement[]>();
+  const bottomRef = useRef<HTMLDivElement>(null);
 
 
   // useEffect(() => {
@@ -30,10 +30,6 @@ const Messages : React.FC<Props> = ({index}) => {
     
   }, []);
 
-
-  useEffect(() => {
-    bottomRef.
-  }, [messageArray]);
 
   useEffect(() => {
     localStorage.setItem(`messages_${index}`, messageArray.join('|'));
